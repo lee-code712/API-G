@@ -1,5 +1,5 @@
 rootProject.name = 'API-G'
 
 include ':Commerce-Common:lib'
-project(':Commerce-Common:lib').projectDir = new File(settingsDir, '../../commerce-workspace/Commerce-Common/lib')
+project(':Commerce-Common:lib').projectDir = new File(settingsDir, '../Commerce-Common/lib')
 
