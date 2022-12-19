@@ -22,7 +22,7 @@ dependencies {
 	implementation group: 'io.swagger.core.v3', name: 'swagger-core', version: '2.1.10'
 	
 	// external jar files
-	implementation fileTree(dir: '/src/main/lib', include: ['*.jar'])
+	implementation fileTree(dir: '/libs', include: ['*.jar'])
 	
 	implementation project(':Commerce-Common:lib')
 }
