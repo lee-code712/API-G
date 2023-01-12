@@ -24,7 +24,7 @@ pipeline {
       steps{
         script {
           echo "Build image START $BUILD_NUMBER"
-          sh "docker build -t ${IMG}:gateway-${BUILD_NUMBER} ."
+          sh "docker build --no-cache -t ${IMG}:gateway-${BUILD_NUMBER} ."
           echo "Build image END"
         }
       }
