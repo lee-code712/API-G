@@ -48,7 +48,8 @@ pipeline {
       steps {
         script {
           echo "Deploy App START"
-          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf create -f gateway_deployment.yaml --image=$IMG$BUILD_NUMBER"
+          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf create -f gateway_deployment.yaml"
+          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf set image deployment/commerce-yr-gateway-v1 commerce-yr-gateway=$IMG$BUILD_NUMBER -n commerce-yr"
           echo "Deploy App END"
         }
       }
