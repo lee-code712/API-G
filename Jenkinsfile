@@ -1,3 +1,5 @@
+def IMG = "192.168.100.12/commerce-yr/commerce-yr-gateway-img:v"
+
 pipeline {
 
   environment {
@@ -21,7 +23,7 @@ pipeline {
       steps{
         script {
           echo "Build image START $BUILD_NUMBER"
-          sh "docker build -t 192.168.100.12/commerce-yr/commerce-yr-gateway-img:v$BUILD_NUMBER ."
+          sh "docker build -t $IMG$BUILD_NUMBER ."
           echo "Build image END"
         }
       }
@@ -35,7 +37,7 @@ pipeline {
         script {
           echo "Push Image START"
           sh "docker login 192.168.100.12 -u admin -p Unipoint11"
-          sh "docker push 192.168.100.12/commerce-yr/commerce-yr-gateway-img:v$BUILD_NUMBER"
+          sh "docker push $IMG$BUILD_NUMBER"
           }
         echo "Push Image END"
       }
@@ -46,7 +48,7 @@ pipeline {
       steps {
         script {
           echo "Deploy App START"
-          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf create --image=192.168.100.12/commerce-yr/commerce-yr-gateway-img:v$BUILD_NUMBER -f gateway_deployment.yaml"
+          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf create --image=$IMG$BUILD_NUMBER -f gateway_deployment.yaml"
           echo "Deploy App END"
         }
       }
