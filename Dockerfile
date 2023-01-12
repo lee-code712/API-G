@@ -10,7 +10,7 @@ RUN mkdir -p /app
 RUN chown -R wasadm:wasadm /app
 
 RUN git clone https://github.com/lee-code712/Commerce-Common.git /app/Commerce-Common
-RUN . /app/API-G
+COPY . /app/API-G
 
 WORKDIR /app/API-G
 
