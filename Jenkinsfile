@@ -50,7 +50,7 @@ pipeline {
         script {
           echo "Deploy App START"
           sh "${KC} apply -f gateway_deployment.yaml"
-          sh "${KC} set image deployment/commerce-yr-gateway-v1 commerce-yr-gateway=${IMG}:gateway-${BUILD_NUMBER} -n commerce-yr"
+          sh "${KC} set image deployment/commerce-yr-gateway-v2 commerce-yr-gateway=${IMG}:gateway-${BUILD_NUMBER} -n commerce-yr"
           echo "Deploy App END"
         }
       }

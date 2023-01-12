@@ -4,7 +4,7 @@ metadata:
   annotations:
     acornsoft.io/workload-group-no: "2"
   generation: 1
-  name: commerce-yr-gateway-v1
+  name: commerce-yr-gateway-v2
   namespace: commerce-yr
 spec:
   replicas: 1
@@ -12,14 +12,14 @@ spec:
   selector:
     matchLabels:
       app: commerce-yr-gateway
-      version: v1
+      version: v2
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
         app: commerce-yr-gateway
-        version: v1
+        version: v2
     spec:
       containers:
       - image: 192.168.100.12/commerce-yr/commerce-yr-gateway-img:gateway-1
