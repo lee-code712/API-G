@@ -4,7 +4,7 @@ metadata:
   annotations:
     acornsoft.io/workload-group-no: "2"
   generation: 1
-  name: commerce-yr-gateway-v1
+  name: commerce-yr-gateway
   namespace: commerce-yr
 spec:
   replicas: 1
