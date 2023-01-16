@@ -18,4 +18,4 @@ WORKDIR /app/API-G
 RUN cd /app/API-G
 RUN gradle build
 
-CMD ["java", "-Djennifer.config=/app/agent/conf/api-gateway_v2.conf","-javaagent:/app/agent/jennifer.jar", "-jar", "/app/API-G/build/libs/API-G-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Djennifer.config=/app/agent/conf/api-gateway.conf","-javaagent:/app/agent/jennifer.jar", "-jar", "/app/API-G/build/libs/API-G-0.0.1-SNAPSHOT.jar"]

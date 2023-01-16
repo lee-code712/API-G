@@ -30,8 +30,4 @@ spec:
       dnsPolicy: ClusterFirst
       imagePullSecrets:
       - name: commerce-cocktail-t8ceb0dry5v7
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
 
